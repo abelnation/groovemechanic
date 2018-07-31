@@ -1,2 +1,2 @@
 
-api-server: npm run --prefix server start
+server: npm run --prefix server start
