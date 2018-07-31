@@ -1,8 +1,8 @@
-const express = require('express')
-const path = require('path')
+import * as express from 'express';
+
 const PORT = process.env.PORT || 5000
 
-import {knex} from './db';
+// import {knex} from './db';
 
 express()
   .get('/', (req, res) => res.json({response: 'success'}))
