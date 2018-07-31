@@ -1,2 +1,2 @@
 
-server: npm run --prefix server start
+web: npm run --prefix server start
