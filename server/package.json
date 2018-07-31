@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "setup": "npm install && npm build && npm test",
+    "setup": "npm install && npm run build && npm test",
     "build": "tsc --noEmit false",
     "start": "node dist/index.js",
     "test": "echo \"no tests...\" && exit 0"
