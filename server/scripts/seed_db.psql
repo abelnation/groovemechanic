@@ -1,0 +1,2 @@
+CREATE DATABASE groovemechanic;
+CREATE USER groovemechanic SUPERUSER PASSWORD 'passpass' ;

@@ -2,7 +2,7 @@
   "name": "groovemechanic",
   "version": "0.1.0",
   "scripts": {
-    "postinstall": "npm --prefix server run setup",
+    "postinstall": "npm --prefix server run prod:setup",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
