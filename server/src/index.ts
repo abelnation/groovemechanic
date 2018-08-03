@@ -1,16 +1,28 @@
+import * as path from 'path';
 import * as express from 'express';
+import * as morgan from 'morgan';
+import { NextFunction, Request, Response } from 'express';
 
-import {knex} from './db';
+import { Config } from './config';
 
-const PORT = process.env.PORT || 5000;
+import todosApi from './api/todos';
 
 const app = express();
-app.get('/', (req, res) => res.json({response: 'success'}))
-app.get('/todos', async (req, res) => {
-  const results = await knex.raw(`
-    SELECT * FROM todos;
-  `);
-  res.json(results);
-});
 
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+// Request logger
+app.use(morgan('tiny'));
+
+// Todos API
+app.use('/api/todos', todosApi);
+
+// Serve client/dist to root dir
+app.use('/', express.static(path.join(__dirname, '../../client/dist/')));
+
+// Catch-all error handler
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  const errString = `${err}`;
+  console.log(err);
+  res.status(500).json({error: errString});
+})
+
+app.listen(Config.server.port, () => console.log(`Listening on ${ Config.server.port }`))

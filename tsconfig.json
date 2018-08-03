@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "module": "commonjs",
+        "moduleResolution": "Node",
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "noFallthroughCasesInSwitch": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "inlineSources": true,
+        "noEmit": true,
+        "target": "es2015",
+        "lib": [
+            "es2015",
+            "es5",
+            "es6",
+            "es7",
+            "dom",
+            "esnext.asynciterable"
+        ],
+        "typeRoots": [
+          "node_modules/@types",
+          "ts-definitions"
+        ]
+    }
+}

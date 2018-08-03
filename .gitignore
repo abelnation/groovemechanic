@@ -1,3 +1,4 @@
+.DS_Store
 .vscode
 node_modules
 
@@ -6,3 +7,6 @@ dist
 
 # postgres dev db data dir
 dbdata
+
+# auto-gen thrift files
+*/src/thrift

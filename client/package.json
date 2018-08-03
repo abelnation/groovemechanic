@@ -1,0 +1,47 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "description": "groovemechanic client",
+  "main": "index.js",
+  "scripts": {
+    "build": "mkdir -p dist src/thrift && npm run build:thrift && npm run build:html && npm run build:js",
+    "build:html": "cp src/index.html dist/index.html",
+    "build:js": "npx webpack",
+    "build:thrift": "thrift-typescript --target thrift-server --sourceDir thrift --outDir src/thrift",
+    "build:watch": "npm run build:js -- --watch --verbose",
+    "start:dev": "npx webpack-serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod:setup": "npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abelnation/groovemechanic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abelnation/groovemechanic/issues"
+  },
+  "homepage": "https://github.com/abelnation/groovemechanic#readme",
+  "dependencies": {
+    "@creditkarma/thrift-client": "^0.7.3",
+    "@creditkarma/thrift-server-core": "^0.7.3",
+    "@creditkarma/thrift-typescript": "^2.0.5",
+    "@types/node": "^10.5.5",
+    "@types/request": "^2.47.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "react-dom": "^16.4.2",
+    "react": "^16.4.2",
+    "request": "^2.87.0",
+    "ts-loader": "^4.4.2",
+    "typescript": "^3.0.1",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0"
+  },
+  "devDependencies": {
+    "webpack-serve": "^2.0.2"
+  }
+}
